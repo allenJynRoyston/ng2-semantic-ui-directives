@@ -7,10 +7,7 @@ declare var $:any;
 
 import {Directive, ElementRef, Input} from '@angular/core';
 @Directive({
-  selector: '[ui-embed]',
-  host: {
-    '(click)':      'onClick()'
-  }
+  selector: '[ui-embed]'
 })
 export class uiSemanticEmbed {
   @Input('options') options:any;
@@ -23,10 +20,5 @@ export class uiSemanticEmbed {
       }
       $(el.nativeElement).embed(t.options)
     })
-  }
-
-
-  onClick(){
-
   }
 }

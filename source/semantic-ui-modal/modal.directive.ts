@@ -71,8 +71,6 @@ export class uiSemanticModalAction {
       if(t.options == undefined){
         t.options = {}
       }
-      console.log(t.options)
-
       $(t.options.selector)
         .modal('toggle')
         .modal(t.options)

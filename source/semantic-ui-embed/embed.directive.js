@@ -20,18 +20,13 @@ var uiSemanticEmbed = (function () {
             $(el.nativeElement).embed(t.options);
         });
     }
-    uiSemanticEmbed.prototype.onClick = function () {
-    };
     __decorate([
         core_1.Input('options'), 
         __metadata('design:type', Object)
     ], uiSemanticEmbed.prototype, "options", void 0);
     uiSemanticEmbed = __decorate([
         core_1.Directive({
-            selector: '[ui-embed]',
-            host: {
-                '(click)': 'onClick()'
-            }
+            selector: '[ui-embed]'
         }), 
         __metadata('design:paramtypes', [core_1.ElementRef])
     ], uiSemanticEmbed);
