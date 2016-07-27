@@ -115,17 +115,23 @@ export class uiSemanticModal {
   }
 })
 export class uiSemanticModalAction {
-  @Input('options') options:any
+  @Input('options') options:any;
+
+  public _public = {
+            selector: ""
+          }
 
   onClick(){
       var t = this;
 
-      if(t.options == undefined){
-        t.options = {}
+      if(t.options.selector != undefined){
+        t._public.selector = t.options.selector;
+        delete t.options["selector"];
       }
-      $(t.options.selector)
-        .modal('show')
+
+      $(t._public.selector)
         .modal(t.options)
+        .modal('show')
 
   }
 
