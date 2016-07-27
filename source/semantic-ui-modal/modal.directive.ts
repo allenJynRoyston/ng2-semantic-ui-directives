@@ -72,7 +72,7 @@ export class uiSemanticModalAction {
         t.options = {}
       }
       $(t.options.selector)
-        .modal('toggle')
+        .modal('show')
         .modal(t.options)
 
   }
