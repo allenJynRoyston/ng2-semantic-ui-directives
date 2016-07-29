@@ -1,15 +1,16 @@
 // HOW TO USE:
 /*
 
-#shape1.ui.shape
-  .sides
-    p Content 1
-  .sides
-    p Content 2
-  .sides
-    p Content 2
+.ui.segment(style='height: 100px')
+  #shape1.ui.shape
+    .sides
+      .side.active
+        h1 Side 1      
+      .side
+        h1 Side 2   
 
-.ui.huge.facebook.button(ui-shape [options]="{selector: '#shape1', animation: 'flip left'}")
+  
+.ui.button(ui-shape [options]="{selector: '#shape1', animation: 'flip left'}")
   | Come at me bro
   i.right.arrow.icon
 
