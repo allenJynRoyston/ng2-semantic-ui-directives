@@ -1,13 +1,20 @@
 // HOW TO USE:
 /*
 
-.ui.segment(style='height: 100px')
-  #shape1.ui.shape
-    .sides
-      .side.active
-        h1 Side 1      
-      .side
-        h1 Side 2   
+.ui.container(style='padding: 50px')
+  .ui.text.container      
+    #shape1.ui.shape
+      .sides.shape-container
+        .side.shape-container.active
+          .content.shape-container
+            center
+              br
+              h1.ui.header Something 1       
+        .side.shape-container
+          .content.shape-container
+            center
+              br
+              h1.ui.header Something 2
 
   
 .ui.button(ui-shape [options]="{selector: '#shape1', animation: 'flip left'}")
