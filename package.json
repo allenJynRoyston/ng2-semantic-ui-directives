@@ -1,6 +1,6 @@
 {
   "name": "ng2-semantic-ui-directives",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Angular2 directives for the Semantic-UI framework.",
   "main": "index.js",
   "scripts": {
