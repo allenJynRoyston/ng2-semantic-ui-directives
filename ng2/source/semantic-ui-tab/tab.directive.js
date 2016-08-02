@@ -1,19 +1,3 @@
-// HOW TO USE:
-/*
-
-.ui.top.attached.tabular.menu(ui-tab)
-  a.item(data-tab='first') First
-  a.item(data-tab='second') Second
-  a.item.active(data-tab='third') Third
-.ui.bottom.attached.tab.segment(data-tab='first')
-  | First
-.ui.bottom.attached.tab.segment(data-tab='second')
-  | Second
-.ui.bottom.attached.tab.segment.active(data-tab='third')
-  | Third
-
-
-*/
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -27,15 +11,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var uiSemanticTab = (function () {
     function uiSemanticTab(el) {
-        this.el = el;
-        var t = this;
-        setTimeout(function () {
-            if (t.options == undefined) {
-                t.options = {};
-            }
-            $(el.nativeElement).find('.item').tab(t.options);
-        });
+        this.element = el.nativeElement;
     }
+    uiSemanticTab.prototype.ngOnInit = function () {
+        var t = this;
+        if (t.options == undefined) {
+            t.options = {};
+        }
+        $(t.element).find('.item').tab(t.options);
+    };
     __decorate([
         core_1.Input('options'), 
         __metadata('design:type', Object)
@@ -44,9 +28,10 @@ var uiSemanticTab = (function () {
         core_1.Directive({
             selector: '[ui-tab]'
         }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
+        __metadata('design:paramtypes', [(typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object])
     ], uiSemanticTab);
     return uiSemanticTab;
+    var _a;
 }());
 exports.uiSemanticTab = uiSemanticTab;
 //# sourceMappingURL=tab.directive.js.map

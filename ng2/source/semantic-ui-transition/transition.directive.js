@@ -1,4 +1,3 @@
-// HOW TO USE:
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -12,19 +11,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var uiSemanticTransitionOnload = (function () {
     function uiSemanticTransitionOnload(el) {
-        this.el = el;
-        var t = this;
-        setTimeout(function () {
-            if (t.options == undefined) {
-                t.options = { animation: 'fade' };
-            }
-            if (t.options.loop) {
-                $(el.nativeElement)
-                    .transition('set looping');
-            }
-            $(el.nativeElement).transition(t.options);
-        });
+        this.element = el.nativeElement;
     }
+    uiSemanticTransitionOnload.prototype.ngOnInit = function () {
+        var t = this;
+        if (t.options == undefined) {
+            t.options = { animation: 'fade' };
+        }
+        if (t.options.loop) {
+            $(t.element)
+                .transition('set looping');
+        }
+        $(t.element).transition(t.options);
+    };
     __decorate([
         core_1.Input('options'), 
         __metadata('design:type', Object)
@@ -34,9 +33,10 @@ var uiSemanticTransitionOnload = (function () {
             selector: '[ui-transition-onload]',
             host: {}
         }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
+        __metadata('design:paramtypes', [(typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object])
     ], uiSemanticTransitionOnload);
     return uiSemanticTransitionOnload;
+    var _a;
 }());
 exports.uiSemanticTransitionOnload = uiSemanticTransitionOnload;
 var uiSemanticTransitionButton = (function () {
@@ -106,9 +106,10 @@ var uiSemanticTransitionHover = (function () {
                 '(mouseenter)': 'onMouseEnter()',
             }
         }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
+        __metadata('design:paramtypes', [(typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object])
     ], uiSemanticTransitionHover);
     return uiSemanticTransitionHover;
+    var _a;
 }());
 exports.uiSemanticTransitionHover = uiSemanticTransitionHover;
 //# sourceMappingURL=transition.directive.js.map

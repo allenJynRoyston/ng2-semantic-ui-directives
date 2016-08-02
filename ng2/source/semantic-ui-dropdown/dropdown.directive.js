@@ -1,42 +1,3 @@
-// HOW TO USE:
-// options available: http://semantic-ui.com/modules/dropdown.html#/settings
-/*
-.ui.dropdown(ui-dropdown [options]="{on: 'hover'}")
-  .text File
-  i.dropdown.icon
-  .menu
-    .item New
-    .item
-      span.description ctrl + o
-      |       Open...
-    .item
-      span.description ctrl + s
-      |       Save as...
-    .item
-      span.description ctrl + r
-      |       Rename
-    .item Make a copy
-    .item
-      i.folder.icon
-      |       Move to folder
-    .item
-      i.trash.icon
-      |       Move to trash
-    .divider
-    .item Download As...
-    .item
-      i.dropdown.icon
-      |       Publish To Web
-      .menu
-        .item Google Docs
-        .item Google Drive
-        .item Dropbox
-        .item Adobe Creative Cloud
-        .item Private FTP
-        .item Another Service...
-    .item E-mail Collaborators
-
-*/
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -51,25 +12,46 @@ var core_1 = require('@angular/core');
 var uiSemanticDropdown = (function () {
     function uiSemanticDropdown(el) {
         this.el = el;
+        this.uiDropdownChange = new core_1.EventEmitter();
         var t = this;
         setTimeout(function () {
             if (t.options == undefined) {
                 t.options = {};
             }
-            $(el.nativeElement).dropdown(t.options);
+            t.options.onChange = function (value, text, choice) {
+                var arr = new Array;
+                if (value.constructor === Array) {
+                    for (var i = 0; i < value.length; i++) {
+                        var s = value[i];
+                        var r = s.match(/'([^']+)'/)[1];
+                        arr.push(r);
+                    }
+                    t.uiDropdownChange.emit(arr);
+                }
+                else {
+                    t.uiDropdownChange.emit({ value: value });
+                }
+            };
+            $(el.nativeElement)
+                .dropdown(t.options);
         });
     }
     __decorate([
         core_1.Input('options'), 
         __metadata('design:type', Object)
     ], uiSemanticDropdown.prototype, "options", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], uiSemanticDropdown.prototype, "uiDropdownChange", void 0);
     uiSemanticDropdown = __decorate([
         core_1.Directive({
             selector: '[ui-dropdown]'
         }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
+        __metadata('design:paramtypes', [(typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object])
     ], uiSemanticDropdown);
     return uiSemanticDropdown;
+    var _a;
 }());
 exports.uiSemanticDropdown = uiSemanticDropdown;
 //# sourceMappingURL=dropdown.directive.js.map

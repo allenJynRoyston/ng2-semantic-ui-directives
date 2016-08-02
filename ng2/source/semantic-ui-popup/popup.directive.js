@@ -1,16 +1,3 @@
-// HOW TO USE:
-/*
-
-POPUP ON OTHER ElementRef
-img#myImage
-  img.logo(src='assets/images/logo.png' style='width: auto; height: 50px')
-.ui.segment
-  .ui.button(ui-popup [options]="{position: 'right center', target: '#myImage', title: 'Title!', content: 'I am content!', on: 'hover'}") Hover Me
-
-SIMPLE POPUP
-.ui.segment
-  .ui.button(ui-popup [options]="{content: 'I am a popup!', on: 'click'}") Hover Me
-*/
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -24,15 +11,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var uiSemanticPopup = (function () {
     function uiSemanticPopup(el) {
-        this.el = el;
-        var t = this;
-        setTimeout(function () {
-            if (t.options == undefined) {
-                t.options = {};
-            }
-            $(el.nativeElement).popup(t.options);
-        });
+        this.element = el.nativeElement;
     }
+    uiSemanticPopup.prototype.ngOnInit = function () {
+        var t = this;
+        if (t.options == undefined) {
+            t.options = {};
+        }
+        $(t.element).popup(t.options);
+    };
     __decorate([
         core_1.Input('options'), 
         __metadata('design:type', Object)
@@ -41,9 +28,10 @@ var uiSemanticPopup = (function () {
         core_1.Directive({
             selector: '[ui-popup]'
         }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
+        __metadata('design:paramtypes', [(typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object])
     ], uiSemanticPopup);
     return uiSemanticPopup;
+    var _a;
 }());
 exports.uiSemanticPopup = uiSemanticPopup;
 //# sourceMappingURL=popup.directive.js.map

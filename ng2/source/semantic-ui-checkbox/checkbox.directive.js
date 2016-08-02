@@ -1,39 +1,3 @@
-// HOW TO USE
-/*
-
-FORM
-.ui.form
-  .inline.fields
-    label How often do you use checkboxes?
-    .field
-      #checkbox1.ui.radio.checkbox
-        input(type='radio', name='frequency')
-        label
-          a(ui-checkbox [options]="{selector: '#checkbox1'}") Once a week
-    .field
-      #checkbox2.ui.radio.checkbox
-        input(type='radio', name='frequency')
-        label
-          a(ui-checkbox [options]="{selector: '#checkbox2'}") 2-3 times a week
-    .field
-      #checkbox3.ui.radio.checkbox
-        input(type='radio', name='frequency')
-        label
-          a(ui-checkbox [options]="{selector: '#checkbox3'}") Once a day
-    .field
-      #checkbox4.ui.radio.checkbox
-        input(type='radio', name='frequency')
-        label
-          a(ui-checkbox [options]="{selector: '#checkbox4'}") Twice a day
-
-SLIDER
-a(ui-checkbox [options]="{selector: '#mySlider', init: true}") Click here or the slider
-br
-#mySlider.ui.slider.checkbox
-  input(type='checkbox')
-  label Accept terms and conditions
-  
-*/
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -47,20 +11,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var uiSemanticCheckbox = (function () {
     function uiSemanticCheckbox(el) {
-        this.el = el;
-        var t = this;
-        setTimeout(function () {
-            if (t.options == undefined) {
-                t.options = { init: false, selector: ".checkbox" };
-            }
-            if (t.options.init) {
-                $(t.options.selector).checkbox('toggle');
-            }
-        });
+        this.element = el.nativeElement;
     }
+    uiSemanticCheckbox.prototype.ngOnInit = function () {
+        var t = this;
+        if (t.options == undefined) {
+            t.options = { init: false, selector: ".checkbox" };
+        }
+        if (t.options.init) {
+            $(t.options.selector).checkbox('toggle');
+        }
+        $(t.element).modal(t.options);
+    };
     uiSemanticCheckbox.prototype.onClick = function () {
         var t = this;
-        $(t.options.selector).checkbox('toggle');
+        $('.ui.checkbox').checkbox('toggle');
     };
     __decorate([
         core_1.Input('options'), 
@@ -68,14 +33,15 @@ var uiSemanticCheckbox = (function () {
     ], uiSemanticCheckbox.prototype, "options", void 0);
     uiSemanticCheckbox = __decorate([
         core_1.Directive({
-            selector: '[ui-checkbox]',
+            selector: '[ui-checkbox-button]',
             host: {
                 '(click)': 'onClick()'
             }
         }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
+        __metadata('design:paramtypes', [(typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object])
     ], uiSemanticCheckbox);
     return uiSemanticCheckbox;
+    var _a;
 }());
 exports.uiSemanticCheckbox = uiSemanticCheckbox;
 //# sourceMappingURL=checkbox.directive.js.map

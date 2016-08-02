@@ -11,15 +11,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var uiSemanticEmbed = (function () {
     function uiSemanticEmbed(el) {
-        this.el = el;
-        var t = this;
-        setTimeout(function () {
-            if (t.options == undefined) {
-                t.options = {};
-            }
-            $(el.nativeElement).embed(t.options);
-        });
+        this.element = el.nativeElement;
     }
+    uiSemanticEmbed.prototype.ngOnInit = function () {
+        var t = this;
+        if (t.options == undefined) {
+            t.options = {};
+        }
+        $(t.element).embed(t.options);
+    };
     __decorate([
         core_1.Input('options'), 
         __metadata('design:type', Object)
@@ -28,9 +28,10 @@ var uiSemanticEmbed = (function () {
         core_1.Directive({
             selector: '[ui-embed]'
         }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
+        __metadata('design:paramtypes', [(typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object])
     ], uiSemanticEmbed);
     return uiSemanticEmbed;
+    var _a;
 }());
 exports.uiSemanticEmbed = uiSemanticEmbed;
 //# sourceMappingURL=embed.directive.js.map

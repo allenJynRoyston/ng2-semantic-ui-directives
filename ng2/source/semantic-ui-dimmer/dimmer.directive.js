@@ -1,12 +1,3 @@
-// HOW TO USE:
-// options:  http://semantic-ui.com/modules/dimmer.html#/settings
-/*
-.blurring.dimmable.image(ui-dimmer [options]="{on: 'hover'}")
-  .ui.dimmer
-    .content
-      .center
-        Only shows up when blurred
-*/
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -20,17 +11,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var uiSemanticDimmer = (function () {
     function uiSemanticDimmer(el) {
-        this.el = el;
-        var i = this;
-        setTimeout(function () {
-            if (i.options == undefined) {
-                i.options = {};
-            }
-            $(el.nativeElement).dimmer(i.options);
-        });
+        this.element = el.nativeElement;
     }
+    uiSemanticDimmer.prototype.ngOnInit = function () {
+        var t = this;
+        if (t.options == undefined) {
+            t.options = {};
+        }
+        $(t.element).dimmer(t.options);
+    };
     uiSemanticDimmer.prototype.onClick = function () {
-        $(this.el.nativeElement).dimmer('toggle');
+        var t = this;
+        $(t.element).dimmer('toggle');
     };
     __decorate([
         core_1.Input('options'), 
@@ -43,19 +35,20 @@ var uiSemanticDimmer = (function () {
                 '(click)': 'onClick()'
             }
         }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
+        __metadata('design:paramtypes', [(typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object])
     ], uiSemanticDimmer);
     return uiSemanticDimmer;
+    var _a;
 }());
 exports.uiSemanticDimmer = uiSemanticDimmer;
 var uiSemanticDimmerButton = (function () {
     function uiSemanticDimmerButton() {
     }
     uiSemanticDimmerButton.prototype.onClick = function () {
-        var i = this;
-        if (i.options != undefined) {
-            if (i.options.selector != undefined) {
-                $(i.options.selector).dimmer('toggle');
+        var t = this;
+        if (t.options != undefined) {
+            if (t.options.selector != undefined) {
+                $(t.options.selector).dimmer('toggle');
             }
         }
     };

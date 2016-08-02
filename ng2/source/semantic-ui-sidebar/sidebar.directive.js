@@ -12,18 +12,22 @@ var core_1 = require('@angular/core');
 var uiSemanticSidebar = (function () {
     function uiSemanticSidebar() {
     }
+    uiSemanticSidebar.prototype.ngOnInit = function () {
+        var t = this;
+        $(t.options.selector).sidebar();
+    };
     uiSemanticSidebar.prototype.onClick = function () {
-        var i = this;
-        if (i.options == undefined) {
-            i.options = { selector: '.sidebar' };
+        var t = this;
+        if (t.options == undefined) {
+            t.options = { selector: '.sidebar' };
         }
         else {
-            if (i.options.animation == undefined) {
-                i.options.animation = "scale down";
+            if (t.options.animation == undefined) {
+                t.options.animation = "scale down";
             }
         }
-        $(i.options.selector)
-            .sidebar('setting', 'transition', i.options.animation)
+        $(t.options.selector)
+            .sidebar('setting', 'transition', t.options.animation)
             .sidebar('toggle');
     };
     __decorate([

@@ -1,16 +1,7 @@
-// HOW TO USE:
-// options:  http://semantic-ui.com/modules/dimmer.html#/settings
-/*
-.blurring.dimmable.image(ui-dimmer [options]="{on: 'hover'}")
-  .ui.dimmer
-    .content
-      .center
-        Only shows up when blurred
-*/
-
 declare var $:any;
+import {Directive, OnInit, ElementRef, Input, EventEmitter } from '@angular/core';
 
-import {Directive, ElementRef, Input} from '@angular/core';
+
 @Directive({
   selector: '[ui-dimmer]',
   host: {
@@ -20,19 +11,23 @@ import {Directive, ElementRef, Input} from '@angular/core';
 export class uiSemanticDimmer {
 	@Input('options') options:any
 
-  constructor(private el: ElementRef) {
-		var i = this;
+  public element:any;
 
-    setTimeout(function(){
-      if(i.options == undefined){
-        i.options = {}
-      }
-      $(el.nativeElement).dimmer(i.options)
-    })
+  constructor(el: ElementRef) {
+    this.element = el.nativeElement;
+  }
+
+  ngOnInit(){
+    var t = this;
+    if(t.options == undefined){
+      t.options = {}
+    }
+    $(t.element).dimmer(t.options)
   }
 
   onClick(){
-    $(this.el.nativeElement).dimmer('toggle');
+    var t = this;
+    $(t.element).dimmer('toggle');
   }
 }
 
@@ -47,10 +42,10 @@ export class uiSemanticDimmerButton {
 	@Input('options') options:any
 
   onClick(){
-      var i = this;
-      if(i.options != undefined){
-        if(i.options.selector != undefined){
-          $(i.options.selector).dimmer('toggle')
+      var t = this;
+      if(t.options != undefined){
+        if(t.options.selector != undefined){
+          $(t.options.selector).dimmer('toggle')
         }
       }
   }

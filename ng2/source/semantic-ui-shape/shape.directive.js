@@ -9,29 +9,38 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var uiSemanticAccordian = (function () {
-    function uiSemanticAccordian(el) {
-        this.element = el.nativeElement;
+var uiSemanticShape = (function () {
+    function uiSemanticShape() {
     }
-    uiSemanticAccordian.prototype.ngOnInit = function () {
-        var t = this;
-        if (t.options == undefined) {
-            t.options = {};
+    uiSemanticShape.prototype.onClick = function () {
+        var i = this;
+        if (i.options == undefined) {
+            i.options = { selector: '.shape', animation: 'flip up' };
         }
-        $(t.element).accordion(t.options);
+        else {
+            if (i.options.selector == undefined) {
+                i.options.selector = '.shape';
+            }
+            if (i.options.selector == undefined) {
+                i.options.animation = '.flip up';
+            }
+        }
+        $(i.options.selector).shape(i.options.animation);
     };
     __decorate([
         core_1.Input('options'), 
         __metadata('design:type', Object)
-    ], uiSemanticAccordian.prototype, "options", void 0);
-    uiSemanticAccordian = __decorate([
+    ], uiSemanticShape.prototype, "options", void 0);
+    uiSemanticShape = __decorate([
         core_1.Directive({
-            selector: '[ui-accordian]',
+            selector: '[ui-shape]',
+            host: {
+                '(click)': 'onClick()'
+            }
         }), 
-        __metadata('design:paramtypes', [(typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object])
-    ], uiSemanticAccordian);
-    return uiSemanticAccordian;
-    var _a;
+        __metadata('design:paramtypes', [])
+    ], uiSemanticShape);
+    return uiSemanticShape;
 }());
-exports.uiSemanticAccordian = uiSemanticAccordian;
-//# sourceMappingURL=accordian.directive.js.map
+exports.uiSemanticShape = uiSemanticShape;
+//# sourceMappingURL=shape.directive.js.map

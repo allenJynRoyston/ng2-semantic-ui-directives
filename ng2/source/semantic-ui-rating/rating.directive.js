@@ -11,27 +11,36 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var uiSemanticRating = (function () {
     function uiSemanticRating(el) {
-        this.el = el;
-        var t = this;
-        setTimeout(function () {
-            if (t.options == undefined) {
-                t.options = {};
-            }
-            $(el.nativeElement).rating(t.options);
-        });
+        this.uiRatingChange = new core_1.EventEmitter();
+        this.element = el.nativeElement;
     }
+    uiSemanticRating.prototype.ngOnInit = function () {
+        var t = this;
+        if (t.options == undefined) {
+            t.options = {};
+        }
+        t.options.onRate = function (value) {
+            t.uiRatingChange.emit(value);
+        };
+        $(t.element).rating(t.options);
+    };
     __decorate([
         core_1.Input('options'), 
         __metadata('design:type', Object)
     ], uiSemanticRating.prototype, "options", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], uiSemanticRating.prototype, "uiRatingChange", void 0);
     uiSemanticRating = __decorate([
         core_1.Directive({
             selector: '[ui-rating]',
             host: {}
         }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
+        __metadata('design:paramtypes', [(typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object])
     ], uiSemanticRating);
     return uiSemanticRating;
+    var _a;
 }());
 exports.uiSemanticRating = uiSemanticRating;
 //# sourceMappingURL=rating.directive.js.map

@@ -1,6 +1,7 @@
 declare var $:any;
+import {Directive, OnInit, ElementRef, Input, EventEmitter } from '@angular/core';
 
-import {Directive, ElementRef, Input} from '@angular/core';
+
 @Directive({
   selector: '[ui-sidebar]',
   host: {
@@ -10,19 +11,25 @@ import {Directive, ElementRef, Input} from '@angular/core';
 export class uiSemanticSidebar {
   @Input('options') options:any
 
-  onClick(){
-    var i = this;
+  ngOnInit() {
+    var t = this;
+    $(t.options.selector).sidebar()
+  }
 
-    if(i.options == undefined){
-      i.options = {selector: '.sidebar'}
+  onClick(){
+    var t = this;
+
+    if(t.options == undefined){
+      t.options = {selector: '.sidebar'}
     }
     else{
-        if(i.options.animation == undefined){
-            i.options.animation = "scale down"
+        if(t.options.animation == undefined){
+           t.options.animation = "scale down"
         }
     }
-    $(i.options.selector)
-      .sidebar('setting', 'transition', i.options.animation)
+
+    $(t.options.selector)
+      .sidebar('setting', 'transition', t.options.animation)
       .sidebar('toggle')
   }
 

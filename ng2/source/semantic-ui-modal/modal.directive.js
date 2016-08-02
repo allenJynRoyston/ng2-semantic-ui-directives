@@ -1,35 +1,3 @@
-// HOW TO USE:
-// options: http://semantic-ui.com/modules/modal.html#/settings
-/*
-// OPEN MODAL button
-a(ui-modal-action [options]="{selector: '#myModal'}") Open Modal
-
-// ADD ACTUAL MODAL WITH SETTINGS (set TRANSITION behavior on here or on MODAL BUTTON)
-#myModal.ui.modal(ui-modal [options]="{closable: false, allowMultiple: true, transition: '<list of animations>', duration: 250}")
-  i.close.icon
-  .header
-    | Modal Title
-  .image.content
-    .image
-      | An image can appear on left or an icon
-    .description
-      | A description can appear on the right
-  .actions
-    .ui.button Cancel
-    .ui.button OK
-*/
-// LIST OF ANIMATIONS
-/*
-  fade
-  scalefade left/right/up/down
-  horizontal/vertical flip
-  drop
-  fly left/right/up/down
-  slide right/left/up/down
-  jiggle
-  tada
-  bounce
-*/
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -43,16 +11,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var uiSemanticModal = (function () {
     function uiSemanticModal(el) {
-        this.el = el;
         this.selector = ".modal";
-        var t = this;
-        setTimeout(function () {
-            if (t.options == undefined) {
-                t.options = {};
-            }
-            $(el.nativeElement).modal(t.options);
-        });
+        this.element = el.nativeElement;
     }
+    uiSemanticModal.prototype.ngOnInit = function () {
+        var t = this;
+        if (t.options == undefined) {
+            t.options = {};
+        }
+        $(t.element).modal(t.options);
+    };
     __decorate([
         core_1.Input('options'), 
         __metadata('design:type', Object)
@@ -61,22 +29,27 @@ var uiSemanticModal = (function () {
         core_1.Directive({
             selector: '[ui-modal]'
         }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
+        __metadata('design:paramtypes', [(typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object])
     ], uiSemanticModal);
     return uiSemanticModal;
+    var _a;
 }());
 exports.uiSemanticModal = uiSemanticModal;
 var uiSemanticModalAction = (function () {
     function uiSemanticModalAction() {
+        this._public = {
+            selector: ""
+        };
     }
     uiSemanticModalAction.prototype.onClick = function () {
         var t = this;
-        if (t.options == undefined) {
-            t.options = {};
+        if (t.options.selector != undefined) {
+            t._public.selector = t.options.selector;
+            delete t.options["selector"];
         }
-        $(t.options.selector)
-            .modal('toggle')
-            .modal(t.options);
+        $(t._public.selector)
+            .modal(t.options)
+            .modal('show');
     };
     __decorate([
         core_1.Input('options'), 
