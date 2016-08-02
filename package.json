@@ -1,0 +1,25 @@
+{
+  "name": "ng2-semantic-ui-directives",
+  "version": "1.0.0",
+  "description": "Angular2 directives for the Semantic-UI framework.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allenRoyston/ng2-semantic-ui-directives.git"
+  },
+  "keywords": [
+    "Angular2",
+    "ng2",
+    "Semantic-UI",
+    "directives"
+  ],
+  "author": "Allen Royston",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/allenRoyston/ng2-semantic-ui-directives/issues"
+  },
+  "homepage": "https://github.com/allenRoyston/ng2-semantic-ui-directives#readme"
+}

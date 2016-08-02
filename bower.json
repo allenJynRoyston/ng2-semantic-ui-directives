@@ -1,0 +1,24 @@
+{
+  "name": "ng2-semantic-ui-directives",
+  "description": "Angular2 directives for the Semantic-UI framework.",
+  "main": "index.js",
+  "authors": [
+    "Allen Royston"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "Angular2",
+    "ng2",
+    "Semantic-UI",
+    "directives"
+  ],
+  "homepage": "https://github.com/allenRoyston/ng2-semantic-ui-directives",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
