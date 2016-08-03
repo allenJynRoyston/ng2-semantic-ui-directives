@@ -9,11 +9,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var uiSemanticAccordian = (function () {
-    function uiSemanticAccordian(el) {
+var uiSemanticAccordion = (function () {
+    function uiSemanticAccordion(el) {
         this.element = el.nativeElement;
     }
-    uiSemanticAccordian.prototype.ngOnInit = function () {
+    uiSemanticAccordion.prototype.ngOnInit = function () {
         var t = this;
         if (t.options == undefined) {
             t.options = {};
@@ -23,16 +23,17 @@ var uiSemanticAccordian = (function () {
     __decorate([
         core_1.Input('options'), 
         __metadata('design:type', Object)
-    ], uiSemanticAccordian.prototype, "options", void 0);
-    uiSemanticAccordian = __decorate([
+    ], uiSemanticAccordion.prototype, "options", void 0);
+    uiSemanticAccordion = __decorate([
         core_1.Directive({
-            selector: '[ui-accordian]',
+            selector: '[ui-accordion]',
         }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
-    ], uiSemanticAccordian);
-    return uiSemanticAccordian;
+        __metadata('design:paramtypes', [(typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object])
+    ], uiSemanticAccordion);
+    return uiSemanticAccordion;
+    var _a;
 }());
-exports.uiSemanticAccordian = uiSemanticAccordian;
+exports.uiSemanticAccordion = uiSemanticAccordion;
 var uiSemanticRating = (function () {
     function uiSemanticRating(el) {
         this.uiRatingChange = new core_1.EventEmitter();
@@ -61,9 +62,10 @@ var uiSemanticRating = (function () {
             selector: '[ui-rating]',
             host: {}
         }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
+        __metadata('design:paramtypes', [(typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object])
     ], uiSemanticRating);
     return uiSemanticRating;
+    var _a;
 }());
 exports.uiSemanticRating = uiSemanticRating;
 var uiSemanticDimmer = (function () {
@@ -92,9 +94,10 @@ var uiSemanticDimmer = (function () {
                 '(click)': 'onClick()'
             }
         }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
+        __metadata('design:paramtypes', [(typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object])
     ], uiSemanticDimmer);
     return uiSemanticDimmer;
+    var _a;
 }());
 exports.uiSemanticDimmer = uiSemanticDimmer;
 var uiSemanticDimmerButton = (function () {
@@ -144,9 +147,10 @@ var uiSemanticModal = (function () {
         core_1.Directive({
             selector: '[ui-modal]'
         }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
+        __metadata('design:paramtypes', [(typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object])
     ], uiSemanticModal);
     return uiSemanticModal;
+    var _a;
 }());
 exports.uiSemanticModal = uiSemanticModal;
 var uiSemanticModalAction = (function () {
@@ -247,9 +251,10 @@ var uiSemanticCheckbox = (function () {
                 '(click)': 'onClick()'
             }
         }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
+        __metadata('design:paramtypes', [(typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object])
     ], uiSemanticCheckbox);
     return uiSemanticCheckbox;
+    var _a;
 }());
 exports.uiSemanticCheckbox = uiSemanticCheckbox;
 var uiSemanticDropdown = (function () {
@@ -291,9 +296,10 @@ var uiSemanticDropdown = (function () {
         core_1.Directive({
             selector: '[ui-dropdown]'
         }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
+        __metadata('design:paramtypes', [(typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object])
     ], uiSemanticDropdown);
     return uiSemanticDropdown;
+    var _a;
 }());
 exports.uiSemanticDropdown = uiSemanticDropdown;
 var uiSemanticEmbed = (function () {
@@ -315,9 +321,10 @@ var uiSemanticEmbed = (function () {
         core_1.Directive({
             selector: '[ui-embed]'
         }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
+        __metadata('design:paramtypes', [(typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object])
     ], uiSemanticEmbed);
     return uiSemanticEmbed;
+    var _a;
 }());
 exports.uiSemanticEmbed = uiSemanticEmbed;
 var uiSemanticPopup = (function () {
@@ -339,9 +346,10 @@ var uiSemanticPopup = (function () {
         core_1.Directive({
             selector: '[ui-popup]'
         }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
+        __metadata('design:paramtypes', [(typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object])
     ], uiSemanticPopup);
     return uiSemanticPopup;
+    var _a;
 }());
 exports.uiSemanticPopup = uiSemanticPopup;
 var uiSemanticTab = (function () {
@@ -363,9 +371,10 @@ var uiSemanticTab = (function () {
         core_1.Directive({
             selector: '[ui-tab]'
         }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
+        __metadata('design:paramtypes', [(typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object])
     ], uiSemanticTab);
     return uiSemanticTab;
+    var _a;
 }());
 exports.uiSemanticTab = uiSemanticTab;
 var uiSemanticProgress = (function () {
@@ -387,9 +396,10 @@ var uiSemanticProgress = (function () {
         core_1.Directive({
             selector: '[ui-progress]'
         }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
+        __metadata('design:paramtypes', [(typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object])
     ], uiSemanticProgress);
     return uiSemanticProgress;
+    var _a;
 }());
 exports.uiSemanticProgress = uiSemanticProgress;
 var uiSemanticProgressButton = (function () {
@@ -483,9 +493,10 @@ var uiSemanticTransitionOnload = (function () {
             selector: '[ui-transition-onload]',
             host: {}
         }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
+        __metadata('design:paramtypes', [(typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object])
     ], uiSemanticTransitionOnload);
     return uiSemanticTransitionOnload;
+    var _a;
 }());
 exports.uiSemanticTransitionOnload = uiSemanticTransitionOnload;
 var uiSemanticTransitionButton = (function () {
@@ -555,9 +566,10 @@ var uiSemanticTransitionHover = (function () {
                 '(mouseenter)': 'onMouseEnter()',
             }
         }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
+        __metadata('design:paramtypes', [(typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object])
     ], uiSemanticTransitionHover);
     return uiSemanticTransitionHover;
+    var _a;
 }());
 exports.uiSemanticTransitionHover = uiSemanticTransitionHover;
 var uiSemanticVisibility = (function () {
@@ -668,9 +680,10 @@ var uiSemanticVisibility = (function () {
             selector: '[ui-visibility]',
             host: {}
         }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
+        __metadata('design:paramtypes', [(typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object])
     ], uiSemanticVisibility);
     return uiSemanticVisibility;
+    var _a;
 }());
 exports.uiSemanticVisibility = uiSemanticVisibility;
 //# sourceMappingURL=semantic-ui.directive.js.map

@@ -2,9 +2,9 @@ declare var $:any;
 import {Directive, OnInit, ElementRef, Input, Output, EventEmitter } from '@angular/core';
 
 @Directive({
-  selector: '[ui-accordian]',
+  selector: '[ui-accordion]',
 })
-export class uiSemanticAccordian implements OnInit {
+export class uiSemanticAccordion implements OnInit {
   @Input('options') options:any
 
   public element:any;

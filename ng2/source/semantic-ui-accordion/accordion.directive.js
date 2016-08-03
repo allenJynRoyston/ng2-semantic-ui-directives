@@ -9,11 +9,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var uiSemanticAccordian = (function () {
-    function uiSemanticAccordian(el) {
+var uiSemanticAccordion = (function () {
+    function uiSemanticAccordion(el) {
         this.element = el.nativeElement;
     }
-    uiSemanticAccordian.prototype.ngOnInit = function () {
+    uiSemanticAccordion.prototype.ngOnInit = function () {
         var t = this;
         if (t.options == undefined) {
             t.options = {};
@@ -23,15 +23,15 @@ var uiSemanticAccordian = (function () {
     __decorate([
         core_1.Input('options'), 
         __metadata('design:type', Object)
-    ], uiSemanticAccordian.prototype, "options", void 0);
-    uiSemanticAccordian = __decorate([
+    ], uiSemanticAccordion.prototype, "options", void 0);
+    uiSemanticAccordion = __decorate([
         core_1.Directive({
-            selector: '[ui-accordian]',
+            selector: '[ui-accordion]',
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof core_1.ElementRef !== 'undefined' && core_1.ElementRef) === 'function' && _a) || Object])
-    ], uiSemanticAccordian);
-    return uiSemanticAccordian;
+    ], uiSemanticAccordion);
+    return uiSemanticAccordion;
     var _a;
 }());
-exports.uiSemanticAccordian = uiSemanticAccordian;
-//# sourceMappingURL=accordian.directive.js.map
+exports.uiSemanticAccordion = uiSemanticAccordion;
+//# sourceMappingURL=accordion.directive.js.map
