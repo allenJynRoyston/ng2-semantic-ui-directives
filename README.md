@@ -1,7 +1,7 @@
 # Install instructions can be found here:
 
-
-[Setup instructions](https://semantic-ui-angular2.herokuapp.com/)
+### Setup and Usage
+- [Click here](https://semantic-ui-angular2.herokuapp.com/)
 
 
 
