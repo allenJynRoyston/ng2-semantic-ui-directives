@@ -1,3 +1,4 @@
-# ng2-semantic-ui-directives
+# Install instructions can be found here:
 
-### Instructions coming soon
+
+[Setup instructions](https://semantic-ui-angular2.herokuapp.com/)
